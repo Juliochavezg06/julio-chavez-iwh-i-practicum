@@ -1,22 +1,26 @@
 doctype html
 html(lang="en")
-    head
-        title= `${title}`
-        meta(name="viewport" content="width=device-width, initial-scale=1")
-        link(rel="stylesheet", href="/css/style.css")
-    body 
-        a(href="http://localhost:3000/update-cobj") Add/Update Custom Object
-        
-        div.container 
-            table(style='width:50%; background-color:#fff; margin:10px;padding:20px;').card
-                tr(style='margin-bottom: 30px!important;')
-                    th Name
-                    th Color
-                    th Category
-                each sneaker in sneakers
-                    tr(style='text-align: center; margin-bottom: 10px!important;')
-                        td #{sneaker.properties.name}
-                        td #{sneaker.properties.color}
-                        td #{sneaker.properties.category}
-                
+head
+    title= `${title}`
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+body 
+    div.container 
+        table(style='width:50%; background-color:#fff;padding: 20px;margin: 40px auto;').card
+            tr(align='center' style='margin: 10px 15px;text-align: center; vertical-align: middle;')
+                th(class="head_table" style="text-align: center; padding-bottom: 15px; font-size: 16px;")
+                    p Name
+                th(class="head_table" style="text-align: center; padding-bottom: 15px; font-size: 16px;") 
+                    p Color
+                th(class="head_table" style="text-align: center; padding-bottom: 15px; font-size: 16px;") 
+                    p Category
+            each sneaker in sneakers
+                tr(style='text-align: center; margin: 10px 15px;')
+                    td(style="padding-bottom: 10px;") #{sneaker.properties.name}
+                    td(style="padding-bottom: 10px;") #{sneaker.properties.color}
+                    td(style="padding-bottom: 10px;") #{sneaker.properties.category}
+
+    div.add_button
+        a(href="http://localhost:3000/update-cobj") Add/Update New Sneaker
+            
 
